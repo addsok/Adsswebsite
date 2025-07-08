@@ -1,171 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adds Designs | Web & Graphic Design</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Grim's Trims | Garden Services</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #121212;
-      color: #fff;
-      line-height: 1.6;
-    }
-
-    header {
-      background: #1f1f1f;
-      padding: 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #00ffc3;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      color: #ccc;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      color: #333;
     }
 
     nav {
-      background: #292929;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 12px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(6px);
     }
 
     nav a {
-      color: #00ffc3;
+      color: white;
+      margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 8px rgba(255,255,255,0.2);
+    }
+
+    nav a:hover {
+      color: #a5d6a7;
+    }
+
+    header {
+      background: url('https://i.ibb.co/0bg03n9/Untitled.png') no-repeat center center/cover;
+      padding: 100px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      text-shadow: 0 0 10px #000;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      text-shadow: 0 0 6px #000;
+    }
+
+    header img {
+      max-width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #2e7d32;
+      color: white;
+      padding: 12px 25px;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 20px;
+      display: inline-block;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #1b5e20;
     }
 
     section {
-      padding: 2rem;
       max-width: 1000px;
       margin: auto;
+      padding: 40px 20px;
     }
 
-    .fade-in {
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards;
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
+    .about p, .contact p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
     }
 
     .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
     }
 
-    .card {
-      background: #1e1e1e;
-      padding: 1.5rem;
-      border-radius: 10px;
-      box-shadow: 0 0 10px #000;
-      transition: transform 0.3s ease;
+    .service-box {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      width: 280px;
+      text-align: center;
     }
 
-    .card:hover {
-      transform: scale(1.03);
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
     }
 
-    .card h3 {
-      margin-bottom: 0.5rem;
-      color: #00ffc3;
+    .gallery img {
+      width: 300px;
+      border-radius: 8px;
     }
 
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      margin-bottom: 1rem;
-      padding: 0.8rem;
-      border: none;
-      border-radius: 5px;
-    }
-
-    .contact-form button {
-      background: #00ffc3;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-      border-radius: 5px;
+    .reviews {
+      background: #e0f2f1;
+      border-left: 5px solid #2e7d32;
+      padding: 15px;
+      margin: 10px auto;
+      width: 80%;
     }
 
     footer {
+      background: #2e7d32;
+      color: white;
       text-align: center;
-      padding: 1rem;
-      background: #1f1f1f;
-      color: #aaa;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: inline-block;
+        margin: 8px 5px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .gallery img {
+        width: 100%;
+      }
+
+      .service-box {
+        width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-<header class="fade-in">
-  <h1>Adds Designs</h1>
-  <p>Affordable websites, logos & branding – built by someone who gets it</p>
-</header>
+  <!-- NAVIGATION BAR -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
-  <a href="#contact">Contact</a>
-</nav>
+  <!-- HEADER SECTION -->
+  <header>
+    <img src="https://i.ibb.co/cSncQvTP/Untitled.png" alt="Grim's Trims Logo">
+    <h1>Grim's Trims</h1>
+    <p>Grass Cutting, Hedge Trimming & Garden Clearance in South Yorkshire</p>
+    <a href="tel:07912345678" class="btn">Call for a Free Quote</a>
+  </header>
 
-<section id="about" class="fade-in">
-  <h2>About Adds</h2>
-  <p>I’m a one-man creative studio based in Thurnscoe, specialising in website builds, logos, and online branding. Whether you're a small business or just getting started, I’ve got you covered with affordable, no-BS design work.</p>
-</section>
+  <!-- ABOUT SECTION -->
+  <section id="about" class="about">
+    <h2>About Us</h2>
+    <p>.Grim’s Trims is a local grounds maintenance business based in South Yorkshire, working across Sheffield, Rotherham and the surrounding areas. We’re here to help keep your garden or outdoor space tidy all year round – whether it’s grass cutting, hedge trimming, garden clearance, tree work, or green waste removal.
 
-<section id="services" class="fade-in">
-  <h2>What I Offer</h2>
-  <div class="services">
-    <div class="card">
-      <h3>Website Design</h3>
-      <p>Clean, responsive websites from £59. Perfect for local businesses, portfolios, or landing pages.</p>
-    </div>
-    <div class="card">
-      <h3>Logo Design</h3>
-      <p>Custom logos that pop. Delivered in multiple formats – ready for print, socials & merch.</p>
-    </div>
-    <div class="card">
-      <h3>Social Media Branding</h3>
-      <p>Get consistent with banners, profile images, and content templates tailored for your brand.</p>
-    </div>
-    <div class="card">
-      <h3>Hosting & Setup</h3>
-      <p>Don't stress the tech – I’ll help you get online, sort your domain, hosting, and email.</p>
-    </div>
+We offer one-off jobs or regular fortnightly/monthly visits, depending on what you need. No nonsense, no messing about – just reliable, honest work from a local team that takes pride in what we do.
+
+If your garden needs sorting, give Grim’s Trims a shout – we’ll get it looking right in no time.  </p>
+  </section>
+
+  <!-- SERVICES SECTION -->
+<section id="services" class="services">
+  <h2>Grim’s Trims Services</h2>
+  <div class="service-box fade-in">
+    <p>At Grim’s Trims, we cover all your garden and outdoor maintenance needs across South Yorkshire, including Sheffield and Rotherham. Whether it’s a one-off job or regular upkeep, no task is too small or too big. Our services include:</p>
+    <ul style="list-style:none; padding-left:0; font-size:1.1rem; line-height:1.6;">
+      <li>🌳 Hedge Cutting and Shaping</li>
+      <li>🌱 Weed Removal and Treatment</li>
+      <li>🌲 Tree Work: Pruning, Trimming, and Removal</li>
+      <li>🎨 Garden Painting and Fence Staining</li>
+      <li>🪵 Fencing Installation and Repairs</li>
+      <li>💧 Gutter Cleaning</li>
+      <li>💦 Jet Washing for Patios, Drives, and Paths</li>
+      <li>🚛 Green Waste Removal and Disposal</li>
+      <li>🧪 Weed Control: Safe Treatment and Prevention</li>
+      <li>🌷 Flower and Planting Services</li>
+      <li>🍁 Leaf Collection and Clearance</li>
+      <li>🛠️ Shed Removals</li>
+      <li>And much more — if it’s garden work, even just a helping hand, get in touch!</li>
+    </ul>
+    <p>We bring our own tools and expertise, so you can trust us to get the job done right every time.</p>
   </div>
 </section>
 
-<section id="contact" class="fade-in">
-  <h2>Let’s Work Together</h2>
-  <form class="contact-form">
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Email Address" required>
-    <textarea rows="5" placeholder="Tell me about your project..." required></textarea>
-    <button type="submit">Send</button>
-  </form>
-</section>
+<style>
+  .service-box {
+    background: white;
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    max-width: 700px;
+    margin: 0 auto;
+    color: #333;
+  }
 
-<footer>
-  <p>© 2025 Adds Designs — Built by Adam Hartley</p>
-</footer>
+  /* Fade-in animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.3s;
+  }
 
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+  <!-- GALLERY SECTION -->
+  <section id="gallery" class="gallery">
+    <h2>Before & After</h2>
+    <img src="https://via.placeholder.com/300x200?text=Before+1" alt="Before job">
+    <img src="https://via.placeholder.com/300x200?text=After+1" alt="After job">
+    <img src="https://via.placeholder.com/300x200?text=Before+2" alt="Before job">
+    <img src="https://via.placeholder.com/300x200?text=After+2" alt="After job">
+  </section>
+
+  <!-- REVIEWS SECTION -->
+  <section id="reviews">
+    <h2>What People Say</h2>
+    <div class="reviews">
+      “Top lads. Turned up on time, got the job done quick, and garden looks mint. Highly recommend.” – Jade from Wath
+    </div>
+    <div class="reviews">
+      “Used Grim’s Trims for a full clearance. Couldn’t believe the difference. 5 stars.” – Dan from Thurnscoe
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p><strong>Call or WhatsApp:</strong> <a href="tel:07912345678">07912 345 678</a></p>
+    <p><strong>Email:</strong> info@grimstrims.co.uk</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 Grim's Trims. Page By AddsDesigns.
+  </footer>
 </body>
 </html>
